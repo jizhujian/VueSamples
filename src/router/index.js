@@ -13,11 +13,6 @@ const routes = [
     path: '/gridppreport',
     name: 'gridppreport',
     component: () => import('../views/GridppReport.vue')
-  },
-  {
-    path: '/survey',
-    name: 'survey',
-    component: () => import('../views/Survey.vue')
   }
 ]
 

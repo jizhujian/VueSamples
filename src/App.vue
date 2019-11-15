@@ -3,12 +3,25 @@
     <div id="nav" class="no-print">
       <router-link to="/">主页</router-link> |
       <router-link to="/gridppreport">锐浪报表</router-link> |
-      <router-link to="/survey">问卷</router-link> |
-      <button onclick="window.print()">打印</button>
+      <button onclick="window.print()">原生打印</button> |
+      <button @click="printReport()">插件打印</button>
     </div>
-    <router-view/>
+    <router-view id="main"/>
   </div>
 </template>
+
+<script>
+import printJS from 'print-js'
+
+export default {
+  name: 'main',
+  methods: {
+    printReport() {
+      printJS('main', 'html')
+    }
+  }
+}
+</script>
 
 <style>
 #app {
