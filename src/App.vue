@@ -3,6 +3,7 @@
     <div id="nav" class="no-print">
       <router-link to="/">主页</router-link> |
       <router-link to="/gridppreport">锐浪报表</router-link> |
+      <router-link to="/activereport">葡萄城报表</router-link> |
       <button onclick="window.print()">原生打印</button> |
       <button @click="printReport()">插件打印</button>
     </div>

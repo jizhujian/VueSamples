@@ -13,6 +13,11 @@ const routes = [
     path: '/gridppreport',
     name: 'gridppreport',
     component: () => import('../views/GridppReport.vue')
+  },
+  {
+    path: '/activereport',
+    name: 'activereport',
+    component: () => import('../views/ActiveReport.vue')
   }
 ]
 
