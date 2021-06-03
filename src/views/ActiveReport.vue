@@ -1,24 +1,25 @@
 <template>
-  <span>
-    <div id="activeReportViewContainer" style="height: 700px"/>
-  </span>
-</template> 
+  <div id="viewer-host">
+    <JSViewer :report="{ Uri: '/activereport/template/ProjectAndResourceAnalysis.rdlx-json' }"></JSViewer>
+  </div>
+</template>
 
 <script>
+import { Viewer } from "@grapecity/activereports-vue";
+import '@grapecity/activereports/styles/ar-js-ui.css';
 import '@grapecity/activereports/styles/ar-js-viewer.css'
-import * as arjs from '@grapecity/activereports'
 
 export default {
-  name: 'activereport',
-  mounted() {
-    this.$nextTick(() => setTimeout(this.loadReport, 0))
+  name: "App",
+  components: {
+    JSViewer: Viewer,
   },
-  methods: {
-    loadReport() {
-      const viewer = new arjs.Viewer.Viewer('#activeReportViewContainer')
-      viewer.open('/activereport/template/ProjectAndResourceAnalysis.rdlx-json')
-      viewer.availableExports = ['pdf', 'xlsx']
-    }
-  }
-}
+};
 </script>
+
+<style>
+#viewer-host {
+  width: 100%;
+  height: 100vh;
+}
+</style>
